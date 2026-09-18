@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:taskflow-test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+app:
+  jwt:
+    secret: test-only-secret-key-that-is-safely-long-enough-bytes-9876543210!
+    expiration-seconds: 3600
+  seed:
+    enabled: true
+    demo-enabled: false
+    admin:
+      username: admin
+      password: Admin@123456
+
+logging:
+  level:
+    com.devsecops.taskflow: WARN
+    org.springframework.security: WARN

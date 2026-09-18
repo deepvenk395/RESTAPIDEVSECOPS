@@ -1,0 +1,54 @@
+# Maven
+target/
+.mvn/wrapper/maven-wrapper.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+build.log
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+bin/
+out/
+.explode
+*.jks
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Env / secrets
+.env
+*.pem
+*.key
+*.p12
+
+# Test / coverage / reports
+*.dump
+hs_err_pid*
+target/surefire-reports/
+target/site/
+
+# Docker
+docker-compose.override.yml
+
+# Local runtime
+app-dev.err
+app-dev.log
+.app.pid

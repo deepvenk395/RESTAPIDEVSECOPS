@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:taskflow;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+app:
+  jwt:
+    secret: dev-only-insecure-secret-change-me-in-production-!!
+    expiration-seconds: 3600
+  seed:
+    enabled: ${SEED_ENABLED:true}
+    demo-enabled: ${SEED_DEMO_ENABLED:true}
+    admin:
+      username: ${SEED_ADMIN_USERNAME:admin}
+      password: ${SEED_ADMIN_PASSWORD:TaskFlow@Dev987}
+
+logging:
+  level:
+    com.devsecops.taskflow: DEBUG
