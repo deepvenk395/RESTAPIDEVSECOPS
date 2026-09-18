@@ -49,13 +49,13 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v4
         with:
           languages: java-kotlin
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+        uses: github/codeql-action/autobuild@v4
       - name: Perform analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v4
 
   owasp-dependency-check:
     name: OWASP Dependency-Check
@@ -75,7 +75,7 @@ jobs:
         run: sh mvnw -B -ntp org.owasp:dependency-check-maven:11.1.1:check -DfailBuildOnCVSS=7 -Dformat=HTML -Dformats=SARIF -DassemblyAnalyzerEnabled=false
       - name: Upload SARIF
         if: always()
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: target/dependency-check-report.sarif
 
@@ -98,7 +98,7 @@ jobs:
           exit-code: '1'
           ignore-unfixed: true
       - name: Upload SARIF
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: trivy-fs.sarif
 
@@ -123,6 +123,6 @@ jobs:
           exit-code: '1'
           ignore-unfixed: true
       - name: Upload SARIF
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: trivy-image.sarif
